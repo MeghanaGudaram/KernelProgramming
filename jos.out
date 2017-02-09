@@ -1,0 +1,41 @@
+*** Now run 'make gdb'.
+***
+6828 decimal is 15254 octal!
+
+ npages = 32768  npages_basemem = 160 extmem = 65535 ext16mem = 114688
+Physical memory: 131072K available, base = 640K, extended = 130432K
+check_page_alloc() succeeded!
+check_page() succeeded!
+check_kern_pgdir() succeeded!
+check_page_installed_pgdir() succeeded!
+entering test_backtrace 5
+entering test_backtrace 4
+entering test_backtrace 3
+entering test_backtrace 2
+entering test_backtrace 1
+entering test_backtrace 0
+ebp f0114f18 eip f010007b args 00000000 00000000 00000000 00000000 f0102764
+m 1kern/init.c:23: test_backtrace+59
+ebp f0114f38 eip f0100068 args 00000000 00000001 f0114f78 00000000 f0102764
+m 1kern/init.c:20: test_backtrace+40
+ebp f0114f58 eip f0100068 args 00000001 00000002 f0114f98 00000000 f0102764
+m 1kern/init.c:20: test_backtrace+40
+ebp f0114f78 eip f0100068 args 00000002 00000003 f0114fd8 00000000 f0104798
+m 1kern/init.c:20: test_backtrace+40
+ebp f0114f98 eip f0100068 args 00000003 00000004 f0119000 00040000 00000000
+m 1kern/init.c:20: test_backtrace+40
+ebp f0114fb8 eip f0100068 args 00000004 00000005 00000000 00010094 00010094
+m 1kern/init.c:20: test_backtrace+40
+ebp f0114fd8 eip f01000d9 args 00000005 00001aac 00000650 00000000 00000000
+m 0kern/init.c:47: i386_init+69
+ebp f0114ff8 eip f010003e args 00116021 00000000 00000000 00000000 00000000
+m 0kern/entry.S:83: <unknown>+0
+leaving test_backtrace 0
+leaving test_backtrace 1
+leaving test_backtrace 2
+leaving test_backtrace 3
+leaving test_backtrace 4
+leaving test_backtrace 5
+Welcome to the JOS kernel monitor!
+Type 'help' for a list of commands.
+qemu: terminating on signal 15 from pid 2675
