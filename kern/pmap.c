@@ -478,6 +478,8 @@ page_insert(pde_t *pgdir, struct PageInfo *pp, void *va, int perm)
      
         if (*pte & PTE_P)
             page_remove(pgdir, va);
+        if (page_free_list == pp)
+            page_free_list = page_free_list->pp_link;
     }
     else {
             return -E_NO_MEM;
@@ -486,7 +488,6 @@ page_insert(pde_t *pgdir, struct PageInfo *pp, void *va, int perm)
     pp->pp_ref++;
 
     return 0;
-   
 }
 
 //

@@ -206,8 +206,8 @@ debuginfo_eip(uintptr_t addr, struct Eipdebuginfo *info)
 		     lline++)
 		     {
 			info->eip_fn_narg++;
-			//cprintf("m %d",info->eip_fn_narg++);
 		}
-cprintf("m %d",info->eip_fn_narg);
+		// give this to see number of arguments in init.c backtrace func
+     //cprintf("m %d",info->eip_fn_narg);
 	return 0;
 }
