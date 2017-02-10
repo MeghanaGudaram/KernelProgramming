@@ -407,7 +407,8 @@ pgdir_walk(pde_t *pgdir, const void *va, int create)
         pp->pp_ref++;
         *pde = PADDR(pgtable) | PTE_P | PTE_W | PTE_U;
     }
-
+	cprintf("\n PDE = %x addr = %x val = %x\n",pde,&pde,*pde);
+	cprintf("\n PTE = %x addr = %x val = %x\n",pgtable,&pgtable[PTX(va)],*pgtable);
     return &pgtable[PTX(va)];
 }
 
